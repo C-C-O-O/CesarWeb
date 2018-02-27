@@ -7,12 +7,31 @@ namespace CesarWeb.Services
         static string abecedari = ("abcdefghijklmnñopqrstuvwxyz");
 
         ///  Aquí deben hacer todo el código necesario para Desencriptar el mensaje
+        
         public string DesEncriptar(string Mensaje, int clave)
         {
-            
             return Mensaje;
         }
+        public string Encriptar(string Mensaje,int clave)
+        {
+            int i=0;
+            int x=0;
+            string igualdad=Mensaje;
+            for (i=0; i<Mensaje.Length;i++){
+            for(x=0; x<=26;x++){
+                if(Mensaje[i]==ABECEDARIO[x]){
+                    igualdad=igualdad.Replace(igualdad[i],ABECEDARIO[x-clave]);
 
+                }
+                if(Mensaje[i]==abecedari[x]){
+                    igualdad=igualdad.Replace(igualdad[i],abecedari[x-clave]);
+                }}}
+            Mensaje=igualdad;
+            return Mensaje;
+
+        }
+    }
+}  
         
         
         ///  Aquí deben hacer todo el código necesario para Encriptar el mensaje
